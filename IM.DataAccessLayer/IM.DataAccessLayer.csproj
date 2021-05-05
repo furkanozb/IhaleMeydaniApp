@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86333051-9227-4EBC-BD7C-D366FAD1EC2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IM.DataAccessLayer</RootNamespace>
+    <AssemblyName>IM.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IDataAccessDal.cs" />
+    <Compile Include="Concrete\Basic\BaseConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Amount_Of_IncreaseConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\AuctionConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\AuctionUserConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\BankConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CarBrandConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CarDetailConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CarHardwareDetailConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CarMakeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CarTechnicalDetailConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CityConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\ClaimConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\ColorConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CompanyConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Company_TypeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CountryConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CountyConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\CurrencyConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\DiscountcartConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\EmployeeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Employee_PositionConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\E_invoiceConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\E_Invoice_TypeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\FuelTypeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\GearTypeConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\GeneralDesignConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\IconConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\ImageConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\LogConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\MediumConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\MenuConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\NatificationConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Odeme_YontemiConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Payment_PlanConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\PostConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\PricebotConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\PrivateAuctionConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\RoleClaimConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\RoleConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\SegmentConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\SenaryoConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\SocialMedyaConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Sold_ProductConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\SubmitConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\SysdiagramConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\TagConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Tag_PostConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\Tax_AdministrationConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\TitleConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\UserConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\UserProductConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\UserRoleConcrete.cs" />
+    <Compile Include="Concrete\EFConcrete\UserTypeConcrete.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\DatabaseSingleton.cs" />
+    <Compile Include="Tools\ExtensionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\IM.DataLayer\IM.DataLayer.csproj">
+      <Project>{e7632f51-9b6c-404b-8d2c-f5ea94df23eb}</Project>
+      <Name>IM.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

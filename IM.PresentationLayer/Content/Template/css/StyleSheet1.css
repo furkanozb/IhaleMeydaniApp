@@ -1,0 +1,180 @@
+﻿/*Furkan yeni layout css kodları başlangıç*/
+.top-header {
+    border-style: solid;
+    border-width: 1px 0px;
+    border-bottom-color: darkslategray
+}
+/*Furkan yeni layout css kodları bitiş*/
+body {
+    background-color: grey;
+}
+
+.currency-language {
+    list-style: none;
+    padding: 0;
+}
+
+    .currency-language > li {
+        float: left;
+        padding: 5px 25px;
+        margin: 2px;
+        display: block;
+    }
+
+        .currency-language > li:hover ul {
+            display: block;
+            background-color: aqua;
+        }
+
+        .currency-language > li ul li {
+            padding: 5px 25px;
+            margin: 2px;
+            display: block;
+        }
+
+    .currency-language ul {
+        list-style: none;
+        display: none; /*gizlemeye yarar*/
+        position: absolute;
+        padding: 0;
+        top: 36px;
+    }
+
+.account-urls {
+    position: relative;
+    top: 0px;
+    padding: 8px 20px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+/*arama butonu baslangic*/
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    padding-left: 15px;
+    width: 490px;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+    .search_input:focus {
+    }
+
+.searchbar:hover > .search_input {
+    caret-color: blue;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+    background: #ee964b;
+    color: #fff;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+}
+
+/*arama butonu bitis*/
+.Sign-in {
+}
+
+    .Sign-in a {
+        color: #ee964b;
+        font-size: 24px;
+        text-align: right;
+        float: right;
+    }
+
+.selectbox {
+    z-index: 5
+}
+
+.menu {
+    background-color: #ee964b;
+}
+
+.car-navbar ul {
+    padding: 0;
+}
+
+.car-navbar li {
+    float: left;
+    display: block;
+}
+
+
+.car-navbar a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fffffff9;
+}
+
+
+
+.car-navbar li:first-child a {
+    background-color: white;
+    color: black;
+}
+
+.car-navbar a span:hover {
+    border-top-style: solid;
+    border-top-color: #fffffff9;
+    border-top-width: 2px;
+}
+.car-navbar li:first-child span:hover{
+    border-top-style: solid;
+    border-top-color: black;
+    border-top-width: 2px;
+}
+
+.sidebar-social li {
+    float: left;
+    display: block;
+    padding-left:10px;
+}
+
+.menu-menu{
+    float:left;
+    position:relative;
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}

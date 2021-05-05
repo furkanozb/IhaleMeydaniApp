@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/Template/css/boostrap.css" rel="stylesheet" />
+    <link href="~/Content/Template/css/Style.css" rel="stylesheet" />
+
+
+    <script src="~/Content/Template/js/jquery.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Content/Template/js/jquery.signalR-2.4.1.js"></script>
+    <script src="~/SignalR/Hubs"></script>
+
+    <style>
+        .deneme {
+            margin: auto;
+            width: 80%;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        var myApp = angular.module('spicyApp1', []);
+
+        myApp.controller('SpicyController', ['$scope', function ($scope) {
+
+            var loghub = $.connection.signalHub;
+
+            $scope.addauctionuser = function () {
+                loghub.server.addauctionuser($scope.add_auctionuser);
+            }
+
+            loghub.client.GetAllLog = function (actionusers) {
+                $scope.actionusers = actionusers;
+                $scope.$apply();
+
+                $("#bars li .bar").each(function (key, bar) {
+                    var percentage = $(this).data('percentage');
+                    var percentage2 = $("#numbers li span").data('percentage');
+                    percentage = percentage / (percentage2 / 100);
+                    $(this).animate({
+                        'height': percentage + '%'
+                    }, 1000);
+                });
+            }
+
+            loghub.client.addauctionuser = function (actionuser) {
+                $scope.actionusers.push(actionuser);
+                $scope.$apply();
+
+                $("#bars li .bar").each(function (key, bar) {
+                    var percentage = $(this).data('percentage');
+                    var percentage2 = $("#numbers li span").data('percentage');
+                    percentage = percentage / (percentage2 / 100);
+                    $(this).animate({
+                        'height': percentage + '%'
+                    }, 1000);
+                });
+
+            }
+            $.connection.hub.start()
+
+        }]);
+    </script>
+
+</head>
+<body style="padding:0px;" ng-app="spicyApp1">
+
+    <div class=" deneme" style="background:#24282e;">
+        <div class="container-fluid" ng-controller="SpicyController">
+            <!-- header begin -->
+            <div class="row">
+                <div class="col-12 bg-warning" style="height: 100px;"> &nbsp;</div>
+            </div>
+            <!-- header end-->
+            @RenderBody()
+            <!-- footer begin-->
+            <div class="row">
+                <div class="col-12" style="height: 250px;background:#1c1f24;"> &nbsp;</div>
+            </div>
+            <!-- footer end-->
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#bars li .bar").each(function (key, bar) {
+                var percentage = $(this).data('percentage');
+                var percentage2 = $("#numbers li span").data('percentage');
+                percentage = percentage / (percentage2 / 100);
+                $(this).animate({
+                    'height': percentage + '%'
+                }, 1000);
+            });
+        });
+    </script>
+    <script>
+        
+
+
+        //(function (angular) {
+        //    'use strict';
+        //    var myApp = angular.module('spicyApp1', []);
+
+        //    myApp.controller('SpicyController', ['$scope', function ($scope) {
+
+        //        var loghub = $.connection.signalHub;
+        //        loghub.client.GetAllLog = function (tags) {
+
+        //            $scope.tags = tags;
+        //            $scope.$apply();
+        //        }
+
+        //        $.connection.hub.start()
+
+        //    }]);
+        //})(window.angular);
+
+    </script>
+
+</body>
+</html>
